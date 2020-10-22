@@ -1,9 +1,9 @@
-#ifndef PLUGIN_H
-#define PLUGIN_H
+#ifndef MEUIKIT_H
+#define MEUIKIT_H
 
 #include <QtQml/QQmlExtensionPlugin>
 
-class Plugin : public QQmlExtensionPlugin
+class MeuiKit : public QQmlExtensionPlugin
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID QQmlExtensionInterface_iid)
@@ -21,4 +21,4 @@ private:
 
 };
 
-#endif // PLUGIN_H
+#endif // MEUIKIT_H

@@ -3,7 +3,7 @@ set(TARGET MeuiKit)
 set(SOURCES
     meuikit.cpp
     iconthemeprovider.cpp
-    theme.cpp
+    thememanager.cpp
 
     meuikit.qrc
     meui-style/style.qrc

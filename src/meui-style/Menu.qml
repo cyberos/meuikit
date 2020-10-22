@@ -18,7 +18,7 @@ T.Menu
     verticalPadding: 8
     spacing: Meui.Units.smallSpacing
     transformOrigin: !cascade ? Item.Top : (mirrored ? Item.TopRight : Item.TopLeft)
-    modal: true
+    // modal: false
 
     delegate: MenuItem { }
 

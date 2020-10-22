@@ -9,7 +9,6 @@ T.MenuItem
 {
     id: control
 
-    focusPolicy: Qt.NoFocus
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
                             implicitContentWidth + leftPadding + rightPadding)
     implicitHeight: visible ? Math.max(implicitBackgroundHeight + topInset + bottomInset,
