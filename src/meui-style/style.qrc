@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/style">
+        <file>ApplicationWindow.qml</file>
+        <file>Button.qml</file>
+        <file>Menu.qml</file>
+        <file>MenuItem.qml</file>
+    </qresource>
+</RCC>

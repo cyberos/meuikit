@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/meui/kit">
+        <file alias="Units.qml">controls/Units.qml</file>
+    </qresource>
+    <qresource prefix="/"/>
+</RCC>

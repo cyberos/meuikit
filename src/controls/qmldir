@@ -9,4 +9,4 @@ designersupported
 
 typeinfo plugins.qmltypes
 
-TestCyberUI 1.0 TestCyberUI.qml
+singleton Units 1.0 Units.qml

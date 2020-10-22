@@ -4,6 +4,9 @@ set(SOURCES
     meuikit.cpp
     iconthemeprovider.cpp
     theme.cpp
+
+    meuikit.qrc
+    meui-style/style.qrc
 )
 
 add_library(${TARGET} SHARED ${SOURCES})
@@ -25,3 +28,6 @@ install(TARGETS ${TARGET} DESTINATION ${INSTALL_QMLDIR}/${TARGET})
 
 # Install Controls
 install(DIRECTORY controls/ DESTINATION ${INSTALL_QMLDIR}/${TARGET})
+
+# INSTALL STYLE
+install(DIRECTORY meui-style DESTINATION ${INSTALL_QMLDIR}/QtQuick/Controls.2)

@@ -1,0 +1,40 @@
+import QtQuick 2.13
+import QtQuick.Templates 2.3 as T
+import MeuiKit 1.0 as Meui
+import QtQuick.Controls.impl 2.12
+
+T.Button
+{
+    id: control
+    implicitWidth: Math.max(background.implicitWidth, contentItem.implicitWidth + Meui.Units.smallSpacing)
+    implicitHeight: background.implicitHeight
+    hoverEnabled: true
+
+    icon.width: Meui.Units.iconSizes.small
+    icon.height: Meui.Units.iconSizes.small
+
+    icon.color: control.enabled ? (control.highlighted ? control.Meui.Theme.highlightColor : control.Meui.Theme.textColor) : control.Meui.Theme.disabledTextColor
+    spacing: Meui.Units.smallSpacing
+
+    contentItem: IconLabel {
+        text: control.text
+        font: control.font
+        icon: control.icon
+        color: !control.enabled ? control.Meui.Theme.disabledTextColor :
+        control.highlighted || control.down ? control.Meui.Theme.highlightedTextColor : control.Meui.Theme.textColor
+        spacing: control.spacing
+        mirrored: control.mirrored
+        display: control.display
+        alignment: Qt.AlignCenter
+    }
+    
+    background: Rectangle {
+        implicitWidth:  (Meui.Units.iconSizes.medium * 3) + Meui.Units.largeSpacing
+        implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
+     
+        color: control.Meui.Theme.backgroundColor
+        border.color: control.hovered ? Meui.Theme.highlightColor : Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+        border.width: Meui.Units.devicePixelRatio
+        radius: height * 0.07
+    }
+}

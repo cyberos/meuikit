@@ -11,6 +11,14 @@ class Plugin : public QQmlExtensionPlugin
 public:
     void initializeEngine(QQmlEngine *engine, const char *uri);
     void registerTypes(const char *uri);
+
+private:
+    QUrl componentUrl(const QString &fileName) const;
+    QString resolveFilePath(const QString &path) const
+    {
+        return baseUrl().toLocalFile() + QLatin1Char('/') + path;
+    }
+
 };
 
 #endif // PLUGIN_H
