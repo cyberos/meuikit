@@ -1,9 +1,12 @@
-import QtQuick 2.4
-
 pragma Singleton
+
+import QtQuick 2.4
+import MeuiKit 1.0
 
 QtObject {
     id: theme
+
+    property bool darkMode: ThemeManager.darkMode
 
     property color textColor: "#31363b"
     property color disabledTextColor: "#9931363b"

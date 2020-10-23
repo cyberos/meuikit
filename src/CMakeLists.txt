@@ -1,4 +1,5 @@
 set(TARGET MeuiKit)
+set(MODULE_VERSION "1.0")
 
 set(SOURCES
     meuikit.cpp

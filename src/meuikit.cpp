@@ -4,6 +4,7 @@
 
 #include <QDebug>
 #include <QQmlEngine>
+#include <QQuickStyle>
 
 void MeuiKit::initializeEngine(QQmlEngine *engine, const char *uri)
 {
@@ -30,6 +31,8 @@ void MeuiKit::registerTypes(const char *uri)
     qmlRegisterSingletonType(componentUrl(QStringLiteral("Units.qml")), uri, 1, 0, "Units");
 
     qmlRegisterType(componentUrl(QStringLiteral("PopupTips.qml")), uri, 1, 0, "PopupTips");
+
+    qmlProtectModule(uri, 1);
 }
 
 QUrl MeuiKit::componentUrl(const QString &fileName) const
