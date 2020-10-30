@@ -13,13 +13,18 @@ class ThemeManager : public QObject
 public:
     explicit ThemeManager(QObject *parent = nullptr);
 
-    bool darkMode() { return m_isDarkMode; }
+    bool darkMode() { return m_darkMode; }
+
+private slots:
+    void initData();
+    void initDBusSignals();
+    void onDBusDarkModeChanged(bool darkMode);
 
 signals:
     void darkModeChanged();
 
 private:
-    bool m_isDarkMode;
+    bool m_darkMode;
 };
 
 #endif // THEMEMANAGER_H

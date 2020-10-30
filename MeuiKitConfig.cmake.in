@@ -2,6 +2,7 @@
 
 include(CMakeFindDependencyMacro)
 find_dependency(Qt5Core @REQUIRED_QT_VERSION@)
+find_dependency(Qt5DBus @REQUIRED_QT_VERSION@)
 
 # Any changes in this ".cmake" file will be overwritten by CMake, the source is the ".cmake.in" file.
 

@@ -23,7 +23,7 @@ find_package(ECM 5.45.0 NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH}  ${ECM_KDE_MODULE_DIR})
 set(INSTALL_QMLDIR /usr/lib/qt/qml)
 
-set(QT Core Widgets Quick QuickControls2 X11Extras)
+set(QT Core Widgets Quick QuickControls2 X11Extras DBus)
 find_package(Qt5 REQUIRED ${QT})
 
 include(GenerateExportHeader)

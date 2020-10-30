@@ -12,4 +12,4 @@ typeinfo plugins.qmltypes
 singleton Theme 1.0 Theme.qml
 singleton Units 1.0 Units.qml
 
-PopupTips 1.0 PopupTips
+PopupTips 1.0 PopupTips.qml
