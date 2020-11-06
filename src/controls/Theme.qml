@@ -10,10 +10,10 @@ QtObject {
 
     property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
     property color textColor: darkMode ? "#FFFFFF" : "#31363b"
-    property color disabledTextColor: darkMode ? "#424242" : "#9931363b"
+    property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
 
     property color highlightColor: darkMode ? "#3F72FF" : "#3F72FF"
-    property color highlightedTextColor: darkMode ? "#CCCCCC" : "#eff0fa"
+    property color highlightedTextColor: darkMode ? "#FFFFFF" : "#FFFFFF"
 
     property color activeTextColor: "#0176D3"
     property color activeBackgroundColor: "#0176D3"
@@ -22,6 +22,9 @@ QtObject {
     property color linkBackgroundColor: "#2196F3"
     property color visitedLinkColor: "#2196F3"
     property color visitedLinkBackgroundColor: "#2196F3"
+
+    property real smallRadius: 5.0
+    property real bigRadius: 10.0
 
     property font defaultFont: fontMetrics.font
     property font smallFont: {

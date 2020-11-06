@@ -5,5 +5,9 @@
         <file>Control.qml</file>
         <file>Menu.qml</file>
         <file>MenuItem.qml</file>
+        <file>Page.qml</file>
+        <file>Slider.qml</file>
+        <file>TextArea.qml</file>
+        <file>TextField.qml</file>
     </qresource>
 </RCC>

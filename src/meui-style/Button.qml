@@ -21,7 +21,7 @@ T.Button
         font: control.font
         icon: control.icon
         color: !control.enabled ? control.Meui.Theme.disabledTextColor :
-        control.highlighted || control.down ? control.Meui.Theme.highlightedTextColor : control.Meui.Theme.textColor
+        control.highlighted || control.pressed ? control.Meui.Theme.highlightedTextColor : control.Meui.Theme.textColor
         spacing: control.spacing
         mirrored: control.mirrored
         display: control.display
@@ -31,9 +31,11 @@ T.Button
     background: Rectangle {
         implicitWidth:  (Meui.Units.iconSizes.medium * 3) + Meui.Units.largeSpacing
         implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
-     
-        color: control.Meui.Theme.backgroundColor
-        border.color: control.hovered ? Meui.Theme.highlightColor : Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+
+        color: control.pressed ? Meui.Theme.highlightColor : control.Meui.Theme.backgroundColor
+        border.color: control.activeFocus ? Meui.Theme.highlightColor :
+                      Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+
         border.width: Meui.Units.devicePixelRatio
         radius: height * 0.07
     }
