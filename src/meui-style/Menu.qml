@@ -18,7 +18,7 @@ T.Menu
     verticalPadding: 8
     spacing: Meui.Units.smallSpacing
     transformOrigin: !cascade ? Item.Top : (mirrored ? Item.TopRight : Item.TopLeft)
-    modal: false
+    modal: true
 
     delegate: MenuItem { }
 
@@ -84,5 +84,4 @@ T.Menu
                         control.Meui.Theme.backgroundColor.b, 0.4)
         Behavior on opacity { NumberAnimation { duration: 150 } }
     }
-
 }

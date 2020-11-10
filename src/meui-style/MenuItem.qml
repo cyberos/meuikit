@@ -36,15 +36,15 @@ T.MenuItem
         icon: control.icon
         text: control.text
         font: control.font
-        color: control.enabled ? (control.highlighted || control.hovered ? control.Meui.Theme.highlightColor : control.Meui.Theme.textColor) :
-                                 control.Meui.Theme.disabledTextColor
+        color: control.enabled ? control.highlighted || control.pressed ? control.Meui.Theme.highlightedTextColor :
+               control.Meui.Theme.textColor : control.Meui.Theme.disabledTextColor
     }
 
     background: Rectangle {
         implicitWidth: 200
         implicitHeight: control.visible ? Meui.Units.rowHeightAlt : 0
         radius: 4
-        opacity: 0.5
+        opacity: 1
 
         anchors {
             fill: parent
@@ -52,12 +52,6 @@ T.MenuItem
             rightMargin: Meui.Units.smallSpacing
         }
 
-        Behavior on color {
-            ColorAnimation {
-                duration: 100
-            }
-        }
-
-        color: control.pressed ? control.Meui.Theme.highlightColor : "transparent"
+        color: control.highlighted || control.pressed ? control.Meui.Theme.highlightColor : "transparent"
     }
 }

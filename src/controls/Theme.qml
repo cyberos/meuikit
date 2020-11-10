@@ -12,7 +12,7 @@ QtObject {
     property color textColor: darkMode ? "#FFFFFF" : "#31363b"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
 
-    property color highlightColor: darkMode ? "#3F72FF" : "#3F72FF"
+    property color highlightColor: darkMode ? "#2273E6" : "#2273E6"
     property color highlightedTextColor: darkMode ? "#FFFFFF" : "#FFFFFF"
 
     property color activeTextColor: "#0176D3"

@@ -27,7 +27,7 @@ T.Button
         display: control.display
         alignment: Qt.AlignCenter
     }
-    
+
     background: Rectangle {
         implicitWidth:  (Meui.Units.iconSizes.medium * 3) + Meui.Units.largeSpacing
         implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
@@ -37,6 +37,6 @@ T.Button
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
 
         border.width: Meui.Units.devicePixelRatio
-        radius: height * 0.07
+        radius: Meui.Theme.smallRadius
     }
 }
