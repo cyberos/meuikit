@@ -9,6 +9,8 @@ QtObject {
     property bool darkMode: MeuiKitCore.ThemeManager.darkMode
 
     property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
+    property color viewBackgroundColor: darkMode ? "#2E2E2E" : "#f7f7f7"
+
     property color textColor: darkMode ? "#FFFFFF" : "#31363b"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
 
@@ -23,8 +25,8 @@ QtObject {
     property color visitedLinkColor: "#2196F3"
     property color visitedLinkBackgroundColor: "#2196F3"
 
-    property real smallRadius: 5.0
-    property real bigRadius: 10.0
+    property real smallRadius: 8.0
+    property real bigRadius: 12.0
 
     property font defaultFont: fontMetrics.font
     property font smallFont: {

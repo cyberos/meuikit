@@ -30,14 +30,21 @@ T.TabBar {
         preferredHighlightBegin: 48
         preferredHighlightEnd: width - 48
 
-        highlight: Rectangle {
-            color: Meui.Theme.highlightColor
-            radius: Meui.Theme.smallRadius
+        highlight: Item {
+            Rectangle {
+                anchors {
+                    fill: parent
+                    margins: 2
+                }
+                color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.6) : Meui.Theme.backgroundColor
+                radius: Meui.Theme.smallRadius
+            }
         }
     }
 
     background: Rectangle {
-        color: control.Meui.Theme.backgroundColor
+        color: Meui.Theme.darkMode ? Qt.lighter(control.Meui.Theme.viewBackgroundColor, 1.4)
+                                   : Qt.darker(control.Meui.Theme.viewBackgroundColor, 1.05)
         radius: Meui.Theme.smallRadius
     }
 }
