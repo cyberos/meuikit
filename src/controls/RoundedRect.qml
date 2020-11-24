@@ -5,7 +5,7 @@ import MeuiKit 1.0 as Meui
 Rectangle {
     id: control
 
-    property real backgroundOpacity: 0.4
+    property real backgroundOpacity: 0.9
     property real roundedRadius: Meui.Theme.smallRadius
     property color backgroundColor: Meui.Theme.darkMode ? Qt.rgba(0, 0, 0, 1) : Qt.rgba(255, 255, 255, 1)
 

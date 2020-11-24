@@ -18,6 +18,8 @@ Window {
     Meui.RoundedRect {
         anchors.fill: parent
 
+        backgroundOpacity: 0.8
+
         Label {
             id: label
             anchors.centerIn: parent
@@ -25,26 +27,6 @@ Window {
             color: Meui.Theme.textColor
         }
     }
-
-    // Rectangle {
-    //     anchors.fill: parent
-    //     radius: 4
-    //     color: Qt.rgba(Meui.Theme.backgroundColor.r,
-    //                     Meui.Theme.backgroundColor.g,
-    //                     Meui.Theme.backgroundColor.b,
-    //                     0.8)
-    //     border.width: 1
-    //     border.color: Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r,
-    //                                                         Meui.Theme.backgroundColor.g,
-    //                                                         Meui.Theme.backgroundColor.b, 0.7))
-
-    //     Label {
-    //         id: label
-    //         anchors.centerIn: parent
-    //         text: control.popupText
-    //         color: Meui.Theme.textColor
-    //     }
-    // }
 
     onPositionChanged: adjustCorrectLocation()
 
