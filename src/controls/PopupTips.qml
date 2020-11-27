@@ -18,7 +18,7 @@ Window {
     Meui.RoundedRect {
         anchors.fill: parent
 
-        backgroundOpacity: 0.8
+        opacity: 0.8
 
         Label {
             id: label

@@ -61,7 +61,7 @@ T.Dialog {
     contentItem: Item {}
 
     background: Meui.RoundedRect {
-        backgroundOpacity: 1.0
+        opacity: 1.0
     }
 
     header: Label {

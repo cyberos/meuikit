@@ -5,13 +5,12 @@ import MeuiKit 1.0 as Meui
 Rectangle {
     id: control
 
-    property real backgroundOpacity: 0.9
     property real roundedRadius: Meui.Theme.smallRadius
-    property color backgroundColor: Meui.Theme.darkMode ? Qt.rgba(0, 0, 0, 1) : Qt.rgba(255, 255, 255, 1)
+    property color backgroundColor: Meui.Theme.backgroundColor
 
     radius: control.roundedRadius
     color: control.backgroundColor
-    opacity: control.backgroundOpacity
+    opacity: 0.9
     border.color: Qt.rgba(0, 0, 0, 0.4)
     border.width: 1
     antialiasing: true

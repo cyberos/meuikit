@@ -15,10 +15,9 @@ T.Menu
                              contentHeight + topPadding + bottomPadding)
 
     margins: 0
-    verticalPadding: 8
+    verticalPadding: Meui.Units.smallSpacing
     spacing: Meui.Units.smallSpacing
     transformOrigin: !cascade ? Item.Top : (mirrored ? Item.TopRight : Item.TopLeft)
-    modal: true
 
     delegate: MenuItem { }
 
@@ -51,16 +50,32 @@ T.Menu
         ScrollIndicator.vertical: ScrollIndicator {}
     }
 
-    background: Rectangle {
-        radius: 10
+    // background: Rectangle {
+    //     radius: 10
+    //     implicitWidth: 200
+    //     implicitHeight: Meui.Units.rowHeight
+    //     color: control.Meui.Theme.backgroundColor
+    //     border.color: Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r,
+    //                                                         Meui.Theme.backgroundColor.g,
+    //                                                         Meui.Theme.backgroundColor.b, 0.7))
+    //     layer.enabled: true
+
+    //     layer.effect: DropShadow {
+    //         transparentBorder: true
+    //         radius: 32
+    //         samples: 32
+    //         horizontalOffset: 0
+    //         verticalOffset: 0
+    //         color: Qt.rgba(0, 0, 0, 0.11)
+    //     }
+    // }
+
+    background: Meui.RoundedRect {
+        opacity: 1.0
         implicitWidth: 200
         implicitHeight: Meui.Units.rowHeight
-        color: control.Meui.Theme.backgroundColor
-        border.color: Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r,
-                                                            Meui.Theme.backgroundColor.g,
-                                                            Meui.Theme.backgroundColor.b, 0.7))
-        layer.enabled: true
 
+        layer.enabled: true
         layer.effect: DropShadow {
             transparentBorder: true
             radius: 32
