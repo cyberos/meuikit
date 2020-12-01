@@ -49,46 +49,22 @@ Rectangle {
         Behavior on scale {
             NumberAnimation {
                 duration: 250
-                // easing: Qt.EasingIn
             }
         }
 
-        // Rectangle {
-        //     anchors.centerIn: parent
-        //     width: 1
-        //     height: width
-        //     radius: width * 0.5
-        //     color: Meui.Theme.backgroundColor
-        //     visible: control.checked
-        //     opacity: visible ? 1.0 : 0.0
+        Rectangle {
+            anchors.centerIn: parent
+            width: parent.width * 0.5
+            height: width
+            radius: width * 0.5
+            visible: control.checked
+            opacity: visible ? 1.0 : 0.0
 
-        //     // Behavior on opacity {
-        //     //     NumberAnimation {
-        //     //         duration: control.Suru.animations.FastDuration
-        //     //         easing: control.Suru.animations.EasingIn
-        //     //     }
-        //     // }
-        // }
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 250
+                }
+            }
+        }
     }
-
-    // Behavior on scale {
-    //     NumberAnimation {
-    //         duration: control.Suru.animations.SnapDuration
-    //         easing: control.Suru.animations.EasingIn
-    //     }
-    // }
-
-    // Behavior on color {
-    //     ColorAnimation {
-    //         duration: control.Suru.animations.FastDuration
-    //         easing: control.Suru.animations.EasingIn
-    //     }
-    // }
-
-    // Behavior on border.color {
-    //     ColorAnimation {
-    //         duration: control.Suru.animations.FastDuration
-    //         easing: control.Suru.animations.EasingIn
-    //     }
-    // }
 }

@@ -20,9 +20,9 @@
  */
 
 
-import QtQuick 2.6
-import QtQuick.Templates 2.3 as T
-import QtQuick.Controls 2.3
+import QtQuick 2.4
+import QtQuick.Templates 2.4 as T
+import QtQuick.Controls 2.4
 import MeuiKit 1.0 as Meui
 
 T.CheckBox {

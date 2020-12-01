@@ -1,7 +1,7 @@
-import QtQuick 2.13
-import QtQuick.Templates 2.3 as T
+import QtQuick 2.4
+import QtQuick.Templates 2.4 as T
 import MeuiKit 1.0 as Meui
-import QtQuick.Controls.impl 2.12
+import QtQuick.Controls.impl 2.4
 
 T.Button
 {
@@ -33,7 +33,7 @@ T.Button
         implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
 
         color: control.pressed ? Meui.Theme.highlightColor : control.Meui.Theme.backgroundColor
-        border.color: control.activeFocus ? Meui.Theme.highlightColor :
+        border.color: control.activeFocus || control.pressed ? Meui.Theme.highlightColor :
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
 
         border.width: Meui.Units.devicePixelRatio
