@@ -21,9 +21,9 @@ T.Slider {
         height: width
         radius: width / 2
         color: "white"
-        border.color: Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r,
-                                                            Meui.Theme.backgroundColor.g,
-                                                            Meui.Theme.backgroundColor.b, 0.7))
+        border.color: Qt.rgba(Meui.Theme.textColor.r,
+                              Meui.Theme.textColor.g,
+                              Meui.Theme.textColor.b, 0.1)
 
         layer.enabled: true
         layer.effect: DropShadow {
@@ -44,7 +44,6 @@ T.Slider {
         y: control.topPadding + (control.horizontal ? (control.availableHeight - height) / 2 : 0)
         width: control.horizontal ? control.availableWidth : implicitWidth
         height: control.horizontal ? implicitHeight : control.availableHeight
-
         scale: control.horizontal && control.mirrored ? -1 : 1
 
         Rectangle {
@@ -53,7 +52,7 @@ T.Slider {
             width: control.horizontal ? parent.width : sliderTrackHeight
             height: !control.horizontal ? parent.height : sliderTrackHeight
             radius: !control.horizontal ? parent.width / 2 : sliderTrackHeight / 2
-            color: Meui.Theme.darkMode ? Qt.rgba(255, 255, 255, 0.5) : Qt.rgba(0, 0, 0, 0.3)
+            color: Meui.Theme.darkMode ? Qt.rgba(255, 255, 255, 0.5) : Qt.rgba(0, 0, 0, 0.15)
         }
 
         Rectangle {
@@ -62,7 +61,6 @@ T.Slider {
             width: control.horizontal ? control.position * parent.width : sliderTrackHeight
             height: !control.horizontal ? control.position * parent.height : sliderTrackHeight
             radius: !control.horizontal ? parent.width / 2 : sliderTrackHeight / 2
-
             color: control.Meui.Theme.highlightColor
         }
     }
