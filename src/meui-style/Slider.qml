@@ -21,6 +21,7 @@ T.Slider {
         height: width
         radius: width / 2
         color: "white"
+        opacity: 1
         border.color: Qt.rgba(Meui.Theme.textColor.r,
                               Meui.Theme.textColor.g,
                               Meui.Theme.textColor.b, 0.1)

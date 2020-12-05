@@ -35,7 +35,6 @@ T.Button
         color: control.pressed ? Meui.Theme.highlightColor : control.Meui.Theme.backgroundColor
         border.color: control.activeFocus || control.pressed ? Meui.Theme.highlightColor :
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
-
         border.width: Meui.Units.devicePixelRatio
         radius: Meui.Theme.smallRadius
     }

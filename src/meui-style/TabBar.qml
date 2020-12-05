@@ -1,5 +1,6 @@
 import QtQuick 2.6
 import QtQuick.Templates 2.3 as T
+import QtGraphicalEffects 1.0
 import MeuiKit 1.0 as Meui
 
 T.TabBar {
@@ -36,15 +37,24 @@ T.TabBar {
                     fill: parent
                     margins: 2
                 }
-                color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.6) : Meui.Theme.backgroundColor
+                color: Meui.Theme.darkMode ? "#707074" : "#FFFFFF"
                 radius: Meui.Theme.smallRadius
+
+                layer.enabled: true
+                layer.effect: DropShadow {
+                    transparentBorder: true
+                    radius: 2
+                    samples: 2
+                    horizontalOffset: 0
+                    verticalOffset: 0
+                    color: Qt.rgba(0, 0, 0, 0.11)
+                }
             }
         }
     }
 
     background: Rectangle {
-        color: Meui.Theme.darkMode ? Qt.lighter(control.Meui.Theme.viewBackgroundColor, 1.4)
-                                   : Qt.darker(control.Meui.Theme.viewBackgroundColor, 1.05)
+        color: Meui.Theme.darkMode ? "#4A4A4D" : Qt.darker(control.Meui.Theme.viewBackgroundColor, 1.05)
         radius: Meui.Theme.smallRadius
     }
 }
