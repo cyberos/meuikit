@@ -36,19 +36,19 @@ Window {
 
         // left
         if (posX < 0)
-            posX = Meui.Units.smallSpacing
+            posX = 1
 
         // top
         if (posY < 0)
-            posY = Meui.Units.smallSpacing
+            posY = 1
 
         // right
-        if (posX + control.width > Screen.desktopAvailableWidth)
-            posX = Screen.desktopAvailableWidth - control.width - Meui.Units.smallSpacing
+        if (posX + control.width > Screen.width)
+            posX = Screen.width - control.width - 1
 
         // bottom
-        if (posY > control.height > Screen.desktopAvailableWidth)
-            posY = Screen.desktopAvailableWidth - control.width - Meui.Units.smallSpacing
+        if (posY > control.height > Screen.width)
+            posY = Screen.width - control.width - 1
 
         control.x = posX
         control.y = posY
