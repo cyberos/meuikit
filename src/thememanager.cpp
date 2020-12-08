@@ -5,7 +5,7 @@
 #include <QDBusInterface>
 #include <QDebug>
 
-static const QString Service = "org.cyber.settings";
+static const QString Service = "org.cyber.Settings";
 static const QString ObjectPath = "/Theme";
 static const QString Interface = "org.cyber.Theme";
 
