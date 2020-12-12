@@ -5,6 +5,7 @@ set(SOURCES
     meuikit.cpp
     iconthemeprovider.cpp
     thememanager.cpp
+    accentcolormanager.cpp
 
     meuikit.qrc
     meui-style/style.qrc
