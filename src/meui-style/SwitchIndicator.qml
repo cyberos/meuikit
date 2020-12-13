@@ -27,8 +27,7 @@ Item
         width: 16
         height: 16
         radius: width / 2
-        color: control.enabled ? (control.checked ? Kirigami.Theme.highlightColor : "white")
-                               : "transparent"
+        color: control.enabled ? "white" : "transparent"
         Behavior on x {
             enabled: !control.pressed
             SmoothedAnimation {
