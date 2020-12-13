@@ -9,6 +9,8 @@ T.Switch {
                             implicitContentWidth + leftPadding + rightPadding)
     implicitHeight: implicitBackgroundHeight + topInset + bottomInset
 
+    opacity: control.enabled ? 1.0 : 0.5
+
     padding: 8
     spacing: 8
 
@@ -18,18 +20,14 @@ T.Switch {
         control: control
     }
 
-    // contentItem: Text {
-    //     leftPadding: control.indicator && !control.mirrored ? control.indicator.width + control.spacing : 0
-    //     rightPadding: control.indicator && control.mirrored ? control.indicator.width + control.spacing : 0
+    contentItem: Label {
+        leftPadding: control.indicator && !control.mirrored ? control.indicator.width + control.spacing : 0
+        rightPadding: control.indicator && control.mirrored ? control.indicator.width + control.spacing : 0
 
-    //     text: control.text
-    //     font: control.font
-    //     color: control.enabled ? control.Material.foreground : control.Material.hintTextColor
-    //     elide: Text.ElideRight
-    //     verticalAlignment: Text.AlignVCenter
-    // }
-
-    background: Item {
-        implicitHeight: Math.floor(Meui.Units.iconSizes.medium + (Meui.Units.smallSpacing * 1.25))
+        text: control.text
+        font: control.font
+        color: control.enabled ? Meui.Theme.textColor : Meui.Theme.disabledTextColor
+        elide: Label.ElideRight
+        verticalAlignment: Label.AlignVCenter
     }
 }

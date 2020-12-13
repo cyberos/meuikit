@@ -22,7 +22,7 @@ Item
 
     Rectangle {
         id: handle
-        x: Math.max(4, Math.min(parent.width - width, control.visualPosition * parent.width - (width / 2)) - 4)
+        x: Math.max(2, Math.min(parent.width - width, control.visualPosition * parent.width - (width / 2)) - 2)
         y: (parent.height - height) / 2
         width: 16
         height: 16
