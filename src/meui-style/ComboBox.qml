@@ -101,7 +101,7 @@ T.ComboBox {
         implicitWidth:  (Meui.Units.iconSizes.medium * 3) + Meui.Units.largeSpacing
         implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
 
-        radius: height * 0.07
+        radius: Meui.Theme.smallRadius
 
         color: !control.editable ? control.Meui.Theme.backgroundColor : "transparent"
 
@@ -142,7 +142,8 @@ T.ComboBox {
             currentIndex: control.highlightedIndex
             highlightMoveDuration: 0
 
-            T.ScrollIndicator.vertical: ScrollIndicator { }
+            T.ScrollBar.vertical: ScrollBar {}
+            // T.ScrollIndicator.vertical: ScrollIndicator { }
         }
 
         background: Rectangle {
