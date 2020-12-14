@@ -34,11 +34,11 @@ signals:
 private:
     int m_accentColorID;
     QColor m_accentColor;
-    QColor m_blueColor   = QColor(34,  115, 230);
-    QColor m_redColor    = QColor(232, 46,  62 );
-    QColor m_greenColor  = QColor(53,  191, 86 );
-    QColor m_purpleColor = QColor(85,  66,  195);
-    QColor m_pinkColor   = QColor(202, 100, 172);
+    QColor m_blueColor   = QColor(34,  115, 230); // #2273E6
+    QColor m_redColor    = QColor(232, 46,  62 ); // #E82E3E
+    QColor m_greenColor  = QColor(53,  191, 86 ); // #35BF56
+    QColor m_purpleColor = QColor(85,  66,  195); // #5542C3
+    QColor m_pinkColor   = QColor(202, 100, 172); // #CA64AC
     void m_setAccentColor(int accentColorID);
 };
 
