@@ -9,7 +9,7 @@ QtObject {
     property bool darkMode: MeuiKitCore.ThemeManager.darkMode
 
     property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
-    property color viewBackgroundColor: darkMode ? "#2E2E2E" : "#e0e0e0"
+    property color viewBackgroundColor: darkMode ? "#2E2E2E" : "#EAE3DF"
 
     property color textColor: darkMode ? "#FFFFFF" : "#31363b"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
