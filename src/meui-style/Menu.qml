@@ -29,7 +29,7 @@ T.Menu
 
     exit: Transition {
         // shrink_fade_out
-        NumberAnimation { property: "scale"; from: 1.0; to: 0.9; easing.type: Easing.OutQuint; duration: 220 }
+        // NumberAnimation { property: "scale"; from: 1.0; to: 0.9; easing.type: Easing.OutQuint; duration: 220 }
         NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.OutCubic; duration: 150 }
     }
 
@@ -49,26 +49,6 @@ T.Menu
         spacing: control.spacing
         ScrollIndicator.vertical: ScrollIndicator {}
     }
-
-    // background: Rectangle {
-    //     radius: 10
-    //     implicitWidth: 200
-    //     implicitHeight: Meui.Units.rowHeight
-    //     color: control.Meui.Theme.backgroundColor
-    //     border.color: Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r,
-    //                                                         Meui.Theme.backgroundColor.g,
-    //                                                         Meui.Theme.backgroundColor.b, 0.7))
-    //     layer.enabled: true
-
-    //     layer.effect: DropShadow {
-    //         transparentBorder: true
-    //         radius: 32
-    //         samples: 32
-    //         horizontalOffset: 0
-    //         verticalOffset: 0
-    //         color: Qt.rgba(0, 0, 0, 0.11)
-    //     }
-    // }
 
     background: Meui.RoundedRect {
         opacity: 1.0
