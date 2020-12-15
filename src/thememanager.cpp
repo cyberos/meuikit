@@ -87,6 +87,9 @@ void ThemeManager::setAccentColor(int accentColorID)
     case ACCENTCOLOR_PINK:
         m_accentColor = m_pinkColor;
         break;
+    case ACCENTCOLOR_YELLOW:
+        m_accentColor = m_yellowColor;
+        break;
     default:
         m_accentColor = m_blueColor;
         break;

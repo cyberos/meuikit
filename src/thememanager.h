@@ -10,6 +10,7 @@
 #define ACCENTCOLOR_GREEN  2
 #define ACCENTCOLOR_PURPLE 3
 #define ACCENTCOLOR_PINK   4
+#define ACCENTCOLOR_YELLOW 5
 
 class ThemeManager : public QObject
 {
@@ -46,6 +47,7 @@ private:
     QColor m_greenColor  = QColor(53,  191, 86 ); // #35BF56
     QColor m_purpleColor = QColor(85,  66,  195); // #5542C3
     QColor m_pinkColor   = QColor(202, 100, 172); // #CA64AC
+    QColor m_yellowColor = QColor(245, 184, 0);   // #F5B800
 };
 
 #endif // THEMEMANAGER_H
