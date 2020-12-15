@@ -1,7 +1,6 @@
 #include "meuikit.h"
 #include "thememanager.h"
 #include "iconthemeprovider.h"
-#include "accentcolormanager.h"
 
 #include <QDebug>
 #include <QQmlEngine>
@@ -26,12 +25,6 @@ void MeuiKit::registerTypes(const char *uri)
         Q_UNUSED(engine)
         Q_UNUSED(scriptEngine)
         return new ThemeManager;
-    });
-    
-    qmlRegisterSingletonType<AccentColorManager>("MeuiKit.Core", 1, 0, "AccentColorManager", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject * {
-        Q_UNUSED(engine)
-        Q_UNUSED(scriptEngine)
-        return new AccentColorManager;
     });
 
     qmlRegisterSingletonType(componentUrl(QStringLiteral("Theme.qml")), uri, 1, 0, "Theme");

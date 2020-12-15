@@ -14,7 +14,7 @@ QtObject {
     property color textColor: darkMode ? "#FFFFFF" : "#31363b"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
 
-    property color highlightColor: MeuiKitCore.AccentColorManager.accentColor
+    property color highlightColor: MeuiKitCore.ThemeManager.accentColor
     property color highlightedTextColor: darkMode ? "#FFFFFF" : "#FFFFFF"
 
     property color activeTextColor: "#0176D3"
@@ -44,9 +44,4 @@ QtObject {
             id: fontMetrics
         }
     ]
-    function __propagateColorSet(object, context) {}
-    function __propagateTextColor(object, color) {}
-    function __propagateBackgroundColor(object, color) {}
-    function __propagatePrimaryColor(object, color) {}
-    function __propagateAccentColor(object, color) {}
 }
