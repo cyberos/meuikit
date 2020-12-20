@@ -22,15 +22,23 @@ T.Menu
     delegate: MenuItem { }
 
     enter: Transition {
-        // grow_fade_in
-        NumberAnimation { property: "scale"; from: 0.9; to: 1.0; easing.type: Easing.OutQuint; duration: 220 }
-        NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutCubic; duration: 150 }
+        NumberAnimation {
+            property: "opacity"
+            from: 0
+            to: 1
+            easing.type: Easing.InOutQuad
+            duration: 150
+        }
     }
 
     exit: Transition {
-        // shrink_fade_out
-        // NumberAnimation { property: "scale"; from: 1.0; to: 0.9; easing.type: Easing.OutQuint; duration: 220 }
-        NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.OutCubic; duration: 150 }
+        NumberAnimation {
+            property: "opacity"
+            from: 1
+            to: 0
+            easing.type: Easing.InOutQuad
+            duration: 150
+        }
     }
 
     Overlay.modal: Item {
@@ -42,18 +50,28 @@ T.Menu
 
     contentItem: ListView {
         implicitHeight: contentHeight
+
+        implicitWidth: {
+            var maxWidth = 0;
+            for (var i = 0; i < contentItem.children.length; ++i) {
+                maxWidth = Math.max(maxWidth, contentItem.children[i].implicitWidth);
+            }
+            return maxWidth;
+        }
+
         model: control.contentModel
         interactive: Window.window ? contentHeight > Window.window.height : false
         clip: true
-        currentIndex: control.currentIndex
+        currentIndex: control.currentIndex || 0
         spacing: control.spacing
-        ScrollIndicator.vertical: ScrollIndicator {}
+        keyNavigationEnabled: true
+        keyNavigationWraps: true
+
+        ScrollBar.vertical: ScrollBar {}
     }
 
     background: Meui.RoundedRect {
         opacity: 1.0
-        implicitWidth: 200
-        implicitHeight: Meui.Units.rowHeight
 
         layer.enabled: true
         layer.effect: DropShadow {
