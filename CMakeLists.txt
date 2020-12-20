@@ -21,16 +21,30 @@ option(COMPONENT_SYNCING "Build syncing component" ON)
 
 find_package(ECM 5.45.0 NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH}  ${ECM_KDE_MODULE_DIR})
-set(INSTALL_QMLDIR /usr/lib/qt/qml)
 
 set(QT Core Widgets Quick QuickControls2 X11Extras DBus)
 find_package(Qt5 REQUIRED ${QT})
 
 include(GenerateExportHeader)
-
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 include(ECMGenerateHeaders)
+
+# Get the installation directory from qmake
+get_target_property(QT_QMAKE_EXECUTABLE ${Qt5Core_QMAKE_EXECUTABLE} IMPORTED_LOCATION)
+if(NOT QT_QMAKE_EXECUTABLE)
+    message(FATAL_ERROR "qmake is not found.")
+endif()
+
+execute_process(COMMAND ${QT_QMAKE_EXECUTABLE} -query QT_INSTALL_QML
+    OUTPUT_VARIABLE INSTALL_QMLDIR
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+if(INSTALL_QMLDIR)
+    message(STATUS "qml directory:" "${INSTALL_QMLDIR}")
+else()
+    message(FATAL_ERROR "qml directory cannot be detected.")
+endif()
 
 add_subdirectory(src)
 
