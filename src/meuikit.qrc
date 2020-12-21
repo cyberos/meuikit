@@ -1,10 +1,12 @@
 <RCC>
     <qresource prefix="/meui/kit">
+        <file alias="BusyIndicator.qml">controls/BusyIndicator.qml</file>
         <file alias="Icon.qml">controls/Icon.qml</file>
         <file alias="PopupTips.qml">controls/PopupTips.qml</file>
         <file alias="RoundedRect.qml">controls/RoundedRect.qml</file>
         <file alias="Theme.qml">controls/Theme.qml</file>
         <file alias="Units.qml">controls/Units.qml</file>
+        <file>images/refresh.svg</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>
