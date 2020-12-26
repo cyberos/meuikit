@@ -54,7 +54,7 @@ T.TabBar {
     }
 
     background: Rectangle {
-        color: Meui.Theme.alternateBackgroundColor
+        color: Meui.Theme.secondBackgroundColor
         radius: Meui.Theme.smallRadius + 2
     }
 }
