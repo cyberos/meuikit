@@ -54,7 +54,7 @@ T.TabBar {
     }
 
     background: Rectangle {
-        color: Meui.Theme.secondBackgroundColor
+        color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.3) : Meui.Theme.secondBackgroundColor
         radius: Meui.Theme.smallRadius + 2
     }
 }

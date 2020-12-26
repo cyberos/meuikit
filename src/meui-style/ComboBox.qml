@@ -119,20 +119,28 @@ T.ComboBox {
     popup: T.Popup {
         width: Math.max(control.width, 150)
         implicitHeight: Math.min(contentItem.implicitHeight, control.Window.height - topMargin - bottomMargin)
-        // transformOrigin: Item.Top
-        // topMargin: Meui.Units.smallSpacing
-        // bottomMargin: Meui.Units.smallSpacing
+        transformOrigin: Item.Top
+        topMargin: Meui.Units.largeSpacing
+        bottomMargin: Meui.Units.largeSpacing
 
         enter: Transition {
-            // grow_fade_in
-            NumberAnimation { property: "scale"; from: 0.9; to: 1.0; easing.type: Easing.OutQuint; duration: 220 }
-            NumberAnimation { property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutCubic; duration: 150 }
+            NumberAnimation {
+                property: "opacity"
+                from: 0
+                to: 1
+                easing.type: Easing.InOutQuad
+                duration: 150
+            }
         }
 
         exit: Transition {
-            // shrink_fade_out
-            NumberAnimation { property: "scale"; from: 1.0; to: 0.9; easing.type: Easing.OutQuint; duration: 220 }
-            NumberAnimation { property: "opacity"; from: 1.0; to: 0.0; easing.type: Easing.OutCubic; duration: 150 }
+            NumberAnimation {
+                property: "opacity"
+                from: 1
+                to: 0
+                easing.type: Easing.InOutQuad
+                duration: 150
+            }
         }
 
         contentItem: ListView {
