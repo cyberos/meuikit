@@ -13,7 +13,7 @@ QtObject {
     property color greenColor: MeuiKitCore.ThemeManager.greenColor
     property color purpleColor: MeuiKitCore.ThemeManager.purpleColor
     property color pinkColor: MeuiKitCore.ThemeManager.pinkColor
-    property color yellowColor: MeuiKitCore.ThemeManager.yellowColor
+    property color orangeColor: MeuiKitCore.ThemeManager.orangeColor
 
     property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
     property color secondBackgroundColor: darkMode ? "#2E2E2E" : "#F2F2F2"

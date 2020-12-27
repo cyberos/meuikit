@@ -10,7 +10,7 @@
 #define ACCENTCOLOR_GREEN  2
 #define ACCENTCOLOR_PURPLE 3
 #define ACCENTCOLOR_PINK   4
-#define ACCENTCOLOR_YELLOW 5
+#define ACCENTCOLOR_ORANGE 5
 
 class ThemeManager : public QObject
 {
@@ -22,7 +22,7 @@ class ThemeManager : public QObject
     Q_PROPERTY(QColor greenColor READ greenColor CONSTANT)
     Q_PROPERTY(QColor purpleColor READ purpleColor CONSTANT)
     Q_PROPERTY(QColor pinkColor READ pinkColor CONSTANT)
-    Q_PROPERTY(QColor yellowColor READ yellowColor CONSTANT)
+    Q_PROPERTY(QColor orangeColor READ orangeColor CONSTANT)
 
 public:
     explicit ThemeManager(QObject *parent = nullptr);
@@ -35,7 +35,7 @@ public:
     QColor greenColor() { return m_greenColor; }
     QColor purpleColor() { return m_purpleColor; }
     QColor pinkColor() { return m_pinkColor; }
-    QColor yellowColor() { return m_yellowColor; }
+    QColor orangeColor() { return m_orangeColor; }
 
 signals:
     void darkModeChanged();
@@ -55,12 +55,12 @@ private:
     int m_accentColorID;
 
     QColor m_accentColor;
-    QColor m_blueColor   = QColor(34,  115, 230); // #2273E6
-    QColor m_redColor    = QColor(232, 46,  62 ); // #E82E3E
-    QColor m_greenColor  = QColor(53,  191, 86 ); // #35BF56
-    QColor m_purpleColor = QColor(130,  102,  255); // #8266FF
-    QColor m_pinkColor   = QColor(202, 100, 172); // #CA64AC
-    QColor m_yellowColor = QColor(245, 184, 0);   // #F5B800
+    QColor m_blueColor   = QColor(34,  115, 230);   // #2273E6
+    QColor m_redColor    = QColor(232, 46,  62 );   // #E82E3E
+    QColor m_greenColor  = QColor(53,  191, 86 );   // #35BF56
+    QColor m_purpleColor = QColor(130, 102, 255);   // #8266FF
+    QColor m_pinkColor   = QColor(202, 100, 172);   // #CA64AC
+    QColor m_orangeColor = QColor(233, 123, 84);    // #E97B54
 };
 
 #endif // THEMEMANAGER_H
