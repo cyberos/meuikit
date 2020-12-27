@@ -192,7 +192,7 @@ Window {
         id: _background
         anchors.fill: parent
         anchors.margins: 0
-        radius: Meui.Theme.bigRadius
+        radius: root.visibility !== Window.Maximized ? Meui.Theme.bigRadius : 0
         color: Meui.Theme.backgroundColor
         antialiasing: true
 
@@ -233,6 +233,7 @@ Window {
 
         ColumnLayout {
             anchors.fill: parent
+            spacing: 0
 
             Item {
                 id: _titlebar
@@ -256,8 +257,6 @@ Window {
 
                 RowLayout {
                     anchors.fill: parent
-                    anchors.topMargin: edgeSize / 2
-                    anchors.leftMargin: edgeSize
                     anchors.rightMargin: Meui.Units.smallSpacing
                     spacing: Meui.Units.largeSpacing
 
@@ -270,18 +269,21 @@ Window {
                     WindowButton {
                         size: _titlebar.height * 0.9
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "minimize.svg"
+                        visible: root.visibility !== Window.Maximized
                         onClicked: root.showMinimized()
                     }
 
                     WindowButton {
                         size: _titlebar.height * 0.9
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "maximize.svg"
+                        visible: root.visibility !== Window.Maximized
                         onClicked: root.toggleMaximized()
                     }
 
                     WindowButton {
                         size: _titlebar.height * 0.9
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "close.svg"
+                        visible: root.visibility !== Window.Maximized
                         onClicked: root.close()
                     }
                 }
