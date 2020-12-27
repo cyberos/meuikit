@@ -15,7 +15,7 @@ Window {
 
     color: "transparent"
 
-    property var edgeSize: 8
+    property var edgeSize: 4
 
     property alias headerBar : _header.sourceComponent
     property alias content: _content.data
@@ -30,13 +30,14 @@ Window {
 
     // Left top edge
     MouseArea {
-        height: edgeSize
+        height: edgeSize * 2
         width: height
         anchors.top: parent.top
         anchors.left: parent.left
         cursorShape: Qt.SizeFDiagCursor
         propagateComposedEvents: true
         preventStealing: false
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -50,13 +51,14 @@ Window {
 
     // Right top edge
     MouseArea {
-        height: edgeSize
+        height: edgeSize * 2
         width: height
         anchors.top: parent.top
         anchors.right: parent.right
         cursorShape: Qt.SizeBDiagCursor
         propagateComposedEvents: true
         preventStealing: false
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -70,13 +72,14 @@ Window {
 
     // Left bottom edge
     MouseArea {
-        height: edgeSize
+        height: edgeSize * 2
         width: height
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         cursorShape: Qt.SizeBDiagCursor
         propagateComposedEvents: true
         preventStealing: false
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -90,13 +93,14 @@ Window {
 
     // Right bottom edge
     MouseArea {
-        height: edgeSize
+        height: edgeSize * 2
         width: height
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         cursorShape: Qt.SizeFDiagCursor
         propagateComposedEvents: true
         preventStealing: false
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -117,6 +121,7 @@ Window {
         anchors.leftMargin: edgeSize
         anchors.rightMargin: edgeSize
         cursorShape: Qt.SizeVerCursor
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -137,6 +142,7 @@ Window {
         anchors.leftMargin: edgeSize
         anchors.rightMargin: edgeSize
         cursorShape: Qt.SizeVerCursor
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -157,6 +163,7 @@ Window {
         anchors.topMargin: edgeSize
         anchors.bottomMargin: edgeSize
         cursorShape: Qt.SizeHorCursor
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false
@@ -177,6 +184,7 @@ Window {
         anchors.topMargin: edgeSize
         anchors.bottomMargin: edgeSize
         cursorShape: Qt.SizeHorCursor
+        visible: root.visibility !== Window.Maximized
         z: 999
 
         onPressed: mouse.accepted = false

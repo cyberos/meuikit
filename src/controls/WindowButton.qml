@@ -16,6 +16,7 @@ Item {
     Rectangle {
         id: background
         anchors.fill: parent
+        anchors.margins: size * 0.1
         radius: control.height / 2
         color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.3) : Meui.Theme.secondBackgroundColor
         visible: mouseArea.containsMouse
