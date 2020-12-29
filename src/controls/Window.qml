@@ -13,6 +13,10 @@ Window {
     visible: true
     flags: Qt.FramelessWindowHint
 
+    property alias backgroundColor: _background.color
+    property alias headerBarHeight: _titlebar.height
+    property bool hideHeaderOnMaximize: false
+
     color: "transparent"
 
     property var edgeSize: 4
@@ -247,6 +251,7 @@ Window {
                 id: _titlebar
                 Layout.fillWidth: true
                 height: 40
+                visible: hideHeaderOnMaximize ? root.visibility !== Window.Maximized : true
 
                 Item {
                     anchors.fill: parent
