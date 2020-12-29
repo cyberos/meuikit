@@ -280,21 +280,21 @@ Window {
                     }
 
                     WindowButton {
-                        size: _titlebar.height * 0.9
+                        size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "minimize.svg"
                         visible: root.visibility !== Window.Maximized
                         onClicked: root.showMinimized()
                     }
 
                     WindowButton {
-                        size: _titlebar.height * 0.9
+                        size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "maximize.svg"
                         visible: root.visibility !== Window.Maximized
                         onClicked: root.toggleMaximized()
                     }
 
                     WindowButton {
-                        size: _titlebar.height * 0.9
+                        size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "close.svg"
                         visible: root.visibility !== Window.Maximized
                         onClicked: root.close()

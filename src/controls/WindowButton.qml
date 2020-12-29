@@ -10,6 +10,10 @@ Item {
     height: size
     width: size
 
+    property color hoveredColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.1)
+                                                   : Qt.darker(Meui.Theme.backgroundColor, 1.2)
+    property color pressedColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.2)
+                                                     : Qt.darker(Meui.Theme.backgroundColor, 1.3)
     property alias source: image.source
     signal clicked()
 
@@ -18,7 +22,7 @@ Item {
         anchors.fill: parent
         anchors.margins: size * 0.1
         radius: control.height / 2
-        color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.3) : Meui.Theme.secondBackgroundColor
+        color: mouseArea.pressed ? pressedColor : mouseArea.containsMouse ? control.hoveredColor : Meui.Theme.backgroundColor
         visible: mouseArea.containsMouse
     }
 
@@ -35,12 +39,7 @@ Item {
         objectName: "image"
         anchors.fill: parent
         fillMode: Image.PreserveAspectFit
-
-        sourceSize {
-            width: image.width
-            height: image.height
-        }
-
+        sourceSize: Qt.size(width, height)
         cache: true
         asynchronous: false
     }
