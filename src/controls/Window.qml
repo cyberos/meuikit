@@ -19,7 +19,7 @@ Window {
 
     color: "transparent"
 
-    property var edgeSize: 4
+    property var edgeSize: Meui.Theme.bigRadius
 
     property alias headerBar : _header.sourceComponent
     property alias content: _content.data
@@ -32,51 +32,9 @@ Window {
         }
     }
 
-    // Left top edge
-    MouseArea {
-        height: edgeSize * 2
-        width: height
-        anchors.top: parent.top
-        anchors.left: parent.left
-        cursorShape: Qt.SizeFDiagCursor
-        propagateComposedEvents: true
-        preventStealing: false
-        visible: root.visibility !== Window.Maximized
-        z: 999
-
-        onPressed: mouse.accepted = false
-
-        DragHandler {
-            grabPermissions: TapHandler.CanTakeOverFromAnything
-            target: null
-            onActiveChanged: if (active) { root.startSystemResize(Qt.LeftEdge | Qt.TopEdge) }
-        }
-    }
-
-    // Right top edge
-    MouseArea {
-        height: edgeSize * 2
-        width: height
-        anchors.top: parent.top
-        anchors.right: parent.right
-        cursorShape: Qt.SizeBDiagCursor
-        propagateComposedEvents: true
-        preventStealing: false
-        visible: root.visibility !== Window.Maximized
-        z: 999
-
-        onPressed: mouse.accepted = false
-
-        DragHandler {
-            grabPermissions: TapHandler.CanTakeOverFromAnything
-            target: null
-            onActiveChanged: if (active) { root.startSystemResize(Qt.RightEdge | Qt.TopEdge) }
-        }
-    }
-
     // Left bottom edge
     MouseArea {
-        height: edgeSize * 2
+        height: edgeSize
         width: height
         anchors.bottom: parent.bottom
         anchors.left: parent.left
@@ -97,7 +55,7 @@ Window {
 
     // Right bottom edge
     MouseArea {
-        height: edgeSize * 2
+        height: edgeSize
         width: height
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -118,12 +76,12 @@ Window {
 
     // Bottom edge
     MouseArea {
-        height: edgeSize
+        height: edgeSize / 2
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.leftMargin: edgeSize
-        anchors.rightMargin: edgeSize
+        anchors.leftMargin: edgeSize * 2
+        anchors.rightMargin: edgeSize * 2
         cursorShape: Qt.SizeVerCursor
         visible: root.visibility !== Window.Maximized
         z: 999
@@ -137,35 +95,14 @@ Window {
         }
     }
 
-    // Top edge
-    MouseArea {
-        height: edgeSize
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.leftMargin: edgeSize
-        anchors.rightMargin: edgeSize
-        cursorShape: Qt.SizeVerCursor
-        visible: root.visibility !== Window.Maximized
-        z: 999
-
-        onPressed: mouse.accepted = false
-
-        DragHandler {
-            grabPermissions: TapHandler.CanTakeOverFromAnything
-            target: null
-            onActiveChanged: if (active) { root.startSystemResize(Qt.TopEdge) }
-        }
-    }
-
     // Left edge
     MouseArea {
-        width: edgeSize
+        width: edgeSize / 2
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.topMargin: edgeSize
-        anchors.bottomMargin: edgeSize
+        anchors.bottomMargin: edgeSize * 2
         cursorShape: Qt.SizeHorCursor
         visible: root.visibility !== Window.Maximized
         z: 999
@@ -181,12 +118,12 @@ Window {
 
     // Right edge
     MouseArea {
-        width: edgeSize
+        width: edgeSize / 2
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        anchors.topMargin: edgeSize
-        anchors.bottomMargin: edgeSize
+        anchors.leftMargin: edgeSize
+        anchors.bottomMargin: edgeSize * 2
         cursorShape: Qt.SizeHorCursor
         visible: root.visibility !== Window.Maximized
         z: 999
