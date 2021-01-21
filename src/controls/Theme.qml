@@ -18,7 +18,7 @@ QtObject {
     property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
     property color secondBackgroundColor: darkMode ? "#2E2E2E" : "#F5F5F5"
 
-    property color textColor: darkMode ? "#FFFFFF" : "#31363b"
+    property color textColor: darkMode ? "#FFFFFF" : "#171A20"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
 
     property color highlightColor: MeuiKitCore.ThemeManager.accentColor

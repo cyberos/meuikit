@@ -10,9 +10,9 @@ Item {
     height: size
     width: size
 
-    property color hoveredColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.1)
+    property color hoveredColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.5)
                                                    : Qt.darker(Meui.Theme.backgroundColor, 1.2)
-    property color pressedColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.2)
+    property color pressedColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.3)
                                                      : Qt.darker(Meui.Theme.backgroundColor, 1.3)
     property alias source: image.source
     signal clicked()
