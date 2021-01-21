@@ -145,6 +145,12 @@ Window {
         color: Meui.Theme.backgroundColor
         antialiasing: true
 
+        Behavior on color {
+            ColorAnimation {
+                duration: 250
+            }
+        }
+
         Rectangle {
             anchors.fill: parent
             color: "transparent"
