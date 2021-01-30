@@ -27,7 +27,7 @@ T.Menu
             from: 0
             to: 1
             easing.type: Easing.InOutQuad
-            duration: 150
+            duration: 50
         }
     }
 
