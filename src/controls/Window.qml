@@ -252,7 +252,6 @@ Window {
                 RowLayout {
                     id: _content
                     anchors.fill: parent
-                    anchors.rightMargin: edgeSize / 2
                 }
             }
         }
