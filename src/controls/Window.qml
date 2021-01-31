@@ -33,6 +33,12 @@ Window {
         }
     }
 
+    Meui.WindowShadow {
+        view: root
+        geometry: Qt.rect(root.x, root.y, root.width, root.height)
+        radius: _background.radius
+    }
+
     // Left bottom edge
     MouseArea {
         height: edgeSize
@@ -157,7 +163,7 @@ Window {
             color: "transparent"
             radius: parent.radius
             border.color: "black"
-            opacity: 0.7
+            opacity: 0.4
             antialiasing: true
             visible: root.visibility !== Window.Maximized
             z: 999

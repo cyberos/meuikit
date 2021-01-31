@@ -1,6 +1,7 @@
 #include "meuikit.h"
 #include "thememanager.h"
 #include "iconthemeprovider.h"
+#include "shadowhelper/windowshadow.h"
 
 #include <QDebug>
 #include <QQmlEngine>
@@ -26,6 +27,8 @@ void MeuiKit::registerTypes(const char *uri)
         Q_UNUSED(scriptEngine)
         return new ThemeManager;
     });
+
+    qmlRegisterType<WindowShadow>(uri, 1, 0, "WindowShadow");
 
     qmlRegisterSingletonType(componentUrl(QStringLiteral("Theme.qml")), uri, 1, 0, "Theme");
     qmlRegisterSingletonType(componentUrl(QStringLiteral("Units.qml")), uri, 1, 0, "Units");

@@ -24,6 +24,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH}  ${ECM_KDE_MODULE_
 
 set(QT Core Widgets Quick QuickControls2 X11Extras DBus)
 find_package(Qt5 REQUIRED ${QT})
+find_package(KF5WindowSystem REQUIRED)
 
 include(GenerateExportHeader)
 include(GNUInstallDirs)

@@ -5,6 +5,9 @@ set(SOURCES
     meuikit.cpp
     iconthemeprovider.cpp
     thememanager.cpp
+    shadowhelper/windowshadow.cpp
+    shadowhelper/boxshadowrenderer.cpp
+    shadowhelper/tileset.cpp
 
     meuikit.qrc
     meui-style/style.qrc
@@ -21,6 +24,7 @@ target_link_libraries (${TARGET}
         Qt5::Qml
         Qt5::Quick
         Qt5::QuickControls2
+        KF5::WindowSystem
 )
 
 generate_export_header(${TARGET} BASE_NAME ${TARGET})
