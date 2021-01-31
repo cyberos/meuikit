@@ -22,8 +22,8 @@ Window {
 
     property var edgeSize: Meui.Theme.bigRadius
 
-    property Component headerBar
-    property Component content
+    property alias headerBar: _header.sourceComponent
+    default property alias content : _content.data
 
     function toggleMaximized() {
         if (root.visibility === Window.Maximized) {
@@ -221,7 +221,6 @@ Window {
                         id: _header
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        sourceComponent: root.headerBar
                     }
 
                     WindowButton {
@@ -247,11 +246,10 @@ Window {
                 }
             }
 
-            Loader {
+            Item {
                 id: _content
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                sourceComponent: root.content
             }
         }
     }
