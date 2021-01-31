@@ -12,17 +12,18 @@ Window {
     height: 480
     visible: true
     flags: Qt.FramelessWindowHint
+    color: "transparent"
 
     property alias backgroundColor: _background.color
     property alias headerBarHeight: _titlebar.height
-    property bool hideHeaderOnMaximize: false
 
-    color: "transparent"
+    // If the header is empty, it will be hidden when maximized
+    property bool hideHeaderOnMaximize: _header.status == Loader.Null || _header.status == Loader.Error
 
     property var edgeSize: Meui.Theme.bigRadius
 
-    property alias headerBar : _header.sourceComponent
-    property alias content: _content.data
+    property Component headerBar
+    property Component content
 
     function toggleMaximized() {
         if (root.visibility === Window.Maximized) {
@@ -220,6 +221,7 @@ Window {
                         id: _header
                         Layout.fillHeight: true
                         Layout.fillWidth: true
+                        sourceComponent: root.headerBar
                     }
 
                     WindowButton {
@@ -245,14 +247,11 @@ Window {
                 }
             }
 
-            Item {
+            Loader {
+                id: _content
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-
-                RowLayout {
-                    id: _content
-                    anchors.fill: parent
-                }
+                sourceComponent: root.content
             }
         }
     }
