@@ -201,7 +201,6 @@ Window {
                 id: _titlebar
                 Layout.fillWidth: true
                 height: 40
-                visible: hideHeaderOnMaximize ? root.visibility !== Window.Maximized : true
 
                 Item {
                     anchors.fill: parent
@@ -232,21 +231,18 @@ Window {
                     WindowButton {
                         size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "minimize.svg"
-                        visible: root.visibility !== Window.Maximized
                         onClicked: root.showMinimized()
                     }
 
                     WindowButton {
                         size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "maximize.svg"
-                        visible: root.visibility !== Window.Maximized
                         onClicked: root.toggleMaximized()
                     }
 
                     WindowButton {
                         size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "close.svg"
-                        visible: root.visibility !== Window.Maximized
                         onClicked: root.close()
                     }
                 }
