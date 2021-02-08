@@ -16,14 +16,17 @@ Window {
 
     property alias backgroundColor: _background.color
     property alias headerBarHeight: _titlebar.height
-
-    // If the header is empty, it will be hidden when maximized
-    property bool hideHeaderOnMaximize: _header.status == Loader.Null || _header.status == Loader.Error
+    property bool hideHeaderOnMaximize: false
 
     property var edgeSize: Meui.Theme.bigRadius
 
-    property alias headerBar: _header.sourceComponent
     default property alias content : _content.data
+    property Item headerBar
+
+    onHeaderBarChanged: {
+        headerBar.parent = _header
+        headerBar.anchors.fill = _header
+    }
 
     function toggleMaximized() {
         if (root.visibility === Window.Maximized) {
@@ -195,6 +198,7 @@ Window {
 
         ColumnLayout {
             anchors.fill: parent
+            anchors.margins: 1
             spacing: 0
 
             Item {
@@ -222,7 +226,7 @@ Window {
                     anchors.rightMargin: Meui.Units.smallSpacing
                     spacing: Meui.Units.largeSpacing
 
-                    Loader {
+                    Item {
                         id: _header
                         Layout.fillHeight: true
                         Layout.fillWidth: true
