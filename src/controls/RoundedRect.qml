@@ -2,36 +2,40 @@ import QtQuick 2.4
 import QtQuick.Controls 2.4
 import MeuiKit 1.0 as Meui
 
-Rectangle {
+Item {
     id: control
 
-    property real roundedRadius: Meui.Theme.smallRadius
-    property color backgroundColor: Meui.Theme.backgroundColor
+    property real radius: Meui.Theme.smallRadius
+    property var color: Meui.Theme.backgroundColor
 
-    radius: control.roundedRadius
-    color: control.backgroundColor
-    opacity: 0.9
-    border.color: Qt.rgba(0, 0, 0, 0.4)
-    border.width: 1
-    antialiasing: true
-    smooth: true
-
-    Behavior on color {
-        ColorAnimation {
-            duration: 250
-        }
+    Rectangle {
+        id: _border
+        anchors.fill: parent
+        radius: control.radius
+        color: "transparent"
+        border.width: 1
+        border.color: Qt.rgba(0, 0, 0, 0.4)
+        smooth: true
+        antialiasing: true
     }
 
     Rectangle {
-        id: innerBorder
+        id: _border2
         anchors.fill: parent
         anchors.margins: 1
-        radius: control.roundedRadius
+        radius: control.radius - 1
         color: "transparent"
-        border.color: Qt.rgba(255, 255, 255, 0.4)
+        border.color: Qt.rgba(255, 255, 255, 0.2)
         border.width: 1
+    }
+
+    Rectangle {
+        id: _background
+        anchors.fill: parent
+        anchors.margins: 2
+        color: control.color
+        radius: control.radius - 2
         antialiasing: true
         smooth: true
-        visible: Meui.Theme.darkMode
     }
 }
