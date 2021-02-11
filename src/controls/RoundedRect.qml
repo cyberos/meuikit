@@ -14,7 +14,7 @@ Item {
         radius: control.radius
         color: "transparent"
         border.width: 1
-        border.color: Qt.rgba(0, 0, 0, 0.4)
+        border.color: Qt.rgba(0, 0, 0, 0.5)
         smooth: true
         antialiasing: true
     }
@@ -25,7 +25,7 @@ Item {
         anchors.margins: 1
         radius: control.radius - 1
         color: "transparent"
-        border.color: Qt.rgba(255, 255, 255, 0.2)
+        border.color: Qt.rgba(255, 255, 255, 0.3)
         border.width: 1
     }
 
