@@ -22,7 +22,7 @@ Item {
         anchors.fill: parent
         anchors.margins: size * 0.1
         radius: control.height / 2
-        color: mouseArea.pressed ? pressedColor : mouseArea.containsMouse ? control.hoveredColor : Meui.Theme.backgroundColor
+        color: mouseArea.pressed ? pressedColor : mouseArea.containsMouse ? control.hoveredColor : "transparent"
     }
 
     MouseArea {
