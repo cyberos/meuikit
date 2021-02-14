@@ -49,6 +49,7 @@ Rectangle {
         Behavior on scale {
             NumberAnimation {
                 duration: 250
+                easing.type: Easing.InOutCubic
             }
         }
 
@@ -63,6 +64,7 @@ Rectangle {
             Behavior on opacity {
                 NumberAnimation {
                     duration: 250
+                    easing.type: Easing.InOutCubic
                 }
             }
         }

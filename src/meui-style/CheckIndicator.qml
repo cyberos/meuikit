@@ -57,14 +57,14 @@ Rectangle {
     Behavior on border.width {
         NumberAnimation {
             duration: 100
-            easing.type: Easing.OutCubic
+            easing.type: Easing.InOutCubic
         }
     }
 
     Behavior on border.color {
         ColorAnimation {
             duration: 100
-            easing.type: Easing.OutCubic
+            easing.type: Easing.InOutCubic
         }
     }   
 
@@ -78,7 +78,12 @@ Rectangle {
            fillMode: Image.PreserveAspectFit
 
            scale: checked ? 1 : 0
-           Behavior on scale { NumberAnimation { duration: 100 } }
+           Behavior on scale {
+               NumberAnimation {
+                   duration: 100
+                   easing.type: Easing.InOutCubic
+                }
+            }
        }
 
     transitions: Transition {

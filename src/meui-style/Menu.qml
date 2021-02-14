@@ -88,13 +88,23 @@ T.Menu
         color: Qt.rgba( control.Meui.Theme.backgroundColor.r,
                         control.Meui.Theme.backgroundColor.g,
                         control.Meui.Theme.backgroundColor.b, 0.4)
-        Behavior on opacity { NumberAnimation { duration: 150 } }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 150
+                easing.type: Easing.InOutCubic
+            }
+        }
     }
 
     T.Overlay.modeless: Rectangle {
         color: Qt.rgba( control.Meui.Theme.backgroundColor.r,
                         control.Meui.Theme.backgroundColor.g,
                         control.Meui.Theme.backgroundColor.b, 0.4)
-        Behavior on opacity { NumberAnimation { duration: 150 } }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 150
+                easing.type: Easing.InOutCubic
+            }
+        }
     }
 }

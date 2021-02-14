@@ -32,6 +32,7 @@ Item
             enabled: !control.pressed
             SmoothedAnimation {
                 duration: 300
+                easing.type: Easing.InOutCubic
             }
         }
     }
