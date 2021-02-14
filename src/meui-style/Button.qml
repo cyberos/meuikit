@@ -6,7 +6,7 @@ import QtQuick.Controls.impl 2.4
 T.Button
 {
     id: control
-    implicitWidth: Math.max(background.implicitWidth, contentItem.implicitWidth + Meui.Units.smallSpacing)
+    implicitWidth: Math.max(background.implicitWidth, contentItem.implicitWidth + Meui.Units.largeSpacing)
     implicitHeight: background.implicitHeight
     hoverEnabled: true
 
@@ -35,6 +35,13 @@ T.Button
         color: control.pressed ? Meui.Theme.highlightColor : control.Meui.Theme.backgroundColor
         border.color: control.activeFocus || control.pressed ? Meui.Theme.highlightColor :
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+        ColorAnimation {
+            duration: 125
+            easing.type: Easing.InOutCubic
+            id: _colorAnimation
+        }
+        Behavior on color { animation: _colorAnimation }
+        Behavior on border.color { animation: _colorAnimation }
         border.width: Meui.Units.devicePixelRatio
         radius: Meui.Theme.smallRadius
     }
