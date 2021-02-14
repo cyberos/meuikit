@@ -18,6 +18,12 @@ Item
         radius: height / 2
         y: parent.height / 2 - height / 2
         color: control.enabled ? bgColor : "transparent"
+        Behavior on color {
+            ColorAnimation {
+                duration: 125
+                easing.type: Easing.InOutCubic
+            }
+        }
     }
 
     Rectangle {
