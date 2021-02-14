@@ -26,7 +26,7 @@ T.Menu
             property: "opacity"
             from: 0
             to: 1
-            easing.type: Easing.InOutQuad
+            easing.type: Easing.InOutCubic
             duration: 50
         }
     }
@@ -36,7 +36,7 @@ T.Menu
             property: "opacity"
             from: 1
             to: 0
-            easing.type: Easing.InOutQuad
+            easing.type: Easing.InOutCubic
             duration: 150
         }
     }

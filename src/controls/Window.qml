@@ -241,7 +241,9 @@ Window {
 
                     WindowButton {
                         size: 35
-                        source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "maximize.svg"
+                        source: "qrc:/meui/kit/images/" +
+                            (Meui.Theme.darkMode ? "dark/" : "light/") +
+                            (root.visibility === Window.Maximized ? "restore.svg" : "maximize.svg")
                         onClicked: root.toggleMaximized()
                     }
 

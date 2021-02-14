@@ -76,6 +76,14 @@ T.TextField {
 
         border.color: control.activeFocus ? Meui.Theme.highlightColor :
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+        
+        ColorAnimation {
+            id: _colorAnimation
+            duration: 125
+            easing.type: Easing.InOutCubic
+        }
+        Behavior on color { animation: _colorAnimation }
+        Behavior on border.color { animation: _colorAnimation }
 
         radius: Meui.Theme.smallRadius
         border.width: 1
