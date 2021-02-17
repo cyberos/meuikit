@@ -15,8 +15,8 @@ QtObject {
     property color pinkColor: MeuiKitCore.ThemeManager.pinkColor
     property color orangeColor: MeuiKitCore.ThemeManager.orangeColor
 
-    property color backgroundColor: darkMode ? "#3B3B3D" : "#FFFFFF"
-    property color secondBackgroundColor: darkMode ? "#2E2E2E" : "#F5F5F5"
+    property color backgroundColor: darkMode ? "#252525" : "#FFFFFF"
+    property color secondBackgroundColor: darkMode ? "#151515" : "#F5F5F5"
 
     property color textColor: darkMode ? "#FFFFFF" : "#171A20"
     property color disabledTextColor: darkMode ? "#888888" : "#5c5c5c"
