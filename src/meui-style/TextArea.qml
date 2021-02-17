@@ -49,9 +49,9 @@ T.TextArea {
     verticalAlignment: TextEdit.AlignTop
     hoverEnabled: false
 
-    // Work around Qt bug where NativeRendering breaks for non-integer scale factors
     // https://bugreports.qt.io/browse/QTBUG-67007
-    renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
+    // This bug has been fixed since 5.11.0 Beta 3.
+    renderType: Text.NativeRendering
 
     selectByMouse: true
 
