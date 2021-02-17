@@ -37,7 +37,7 @@ T.TabBar {
                     fill: parent
                     margins: 2
                 }
-                color: Meui.Theme.highlightColor
+                color: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 2.2) : Meui.Theme.backgroundColor
                 radius: Meui.Theme.smallRadius
 
                 layer.enabled: true

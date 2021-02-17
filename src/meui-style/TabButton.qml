@@ -21,6 +21,6 @@ T.TabButton {
 
         text: control.text
         font: control.font
-        color: !control.enabled ? Meui.Theme.disabledTextColor : control.checked ? Meui.Theme.highlightedTextColor : Meui.Theme.textColor
+        color: !control.enabled ? Meui.Theme.disabledTextColor : control.checked ? Meui.Theme.textColor : Meui.Theme.textColor
     }
 }
