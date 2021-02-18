@@ -201,7 +201,7 @@ Window {
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: 1
+            anchors.margins: !isMaximized && !isFullScreen ? 1 : 0
             spacing: 0
 
             Item {
