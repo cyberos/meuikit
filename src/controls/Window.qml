@@ -17,6 +17,8 @@ Window {
     property alias backgroundColor: _background.color
     property alias headerBarHeight: _titlebar.height
     property bool hideHeaderOnMaximize: false
+    property bool isMaximized: root.visibility === Window.Maximized
+    property bool isFullScreen: root.visibility === Window.FullScreen
 
     property var edgeSize: Meui.Theme.bigRadius
 
@@ -29,7 +31,7 @@ Window {
     }
 
     function toggleMaximized() {
-        if (root.visibility === Window.Maximized) {
+        if (isMaximized) {
             root.showNormal();
         } else {
             root.showMaximized();
@@ -51,7 +53,7 @@ Window {
         cursorShape: Qt.SizeBDiagCursor
         propagateComposedEvents: true
         preventStealing: false
-        visible: root.visibility !== Window.Maximized
+        visible: !isMaximized && !isFullScreen
         z: 999
 
         onPressed: mouse.accepted = false
@@ -72,7 +74,7 @@ Window {
         cursorShape: Qt.SizeFDiagCursor
         propagateComposedEvents: true
         preventStealing: false
-        visible: root.visibility !== Window.Maximized
+        visible: !isMaximized && !isFullScreen
         z: 999
 
         onPressed: mouse.accepted = false
@@ -93,7 +95,7 @@ Window {
         anchors.leftMargin: edgeSize * 2
         anchors.rightMargin: edgeSize * 2
         cursorShape: Qt.SizeVerCursor
-        visible: root.visibility !== Window.Maximized
+        visible: !isMaximized && !isFullScreen
         z: 999
 
         onPressed: mouse.accepted = false
@@ -114,7 +116,7 @@ Window {
         anchors.topMargin: edgeSize
         anchors.bottomMargin: edgeSize * 2
         cursorShape: Qt.SizeHorCursor
-        visible: root.visibility !== Window.Maximized
+        visible: !isMaximized && !isFullScreen
         z: 999
 
         onPressed: mouse.accepted = false
@@ -135,7 +137,7 @@ Window {
         anchors.leftMargin: edgeSize
         anchors.bottomMargin: edgeSize * 2
         cursorShape: Qt.SizeHorCursor
-        visible: root.visibility !== Window.Maximized
+        visible: !isMaximized && !isFullScreen
         z: 999
 
         onPressed: mouse.accepted = false
@@ -151,7 +153,7 @@ Window {
         id: _background
         anchors.fill: parent
         anchors.margins: 0
-        radius: root.visibility !== Window.Maximized ? Meui.Theme.bigRadius : 0
+        radius: !isMaximized && !isFullScreen ? Meui.Theme.bigRadius : 0
         color: Meui.Theme.backgroundColor
         antialiasing: true
 
@@ -169,7 +171,7 @@ Window {
             border.color: "black"
             opacity: 0.4
             antialiasing: true
-            visible: root.visibility !== Window.Maximized
+            visible: !isMaximized && !isFullScreen
             z: 999
         }
 
@@ -180,7 +182,7 @@ Window {
             radius: parent.radius
             border.color: Meui.Theme.disabledTextColor
             antialiasing: true
-            visible: root.visibility !== Window.Maximized && Meui.Theme.darkMode
+            visible: !isMaximized && !isFullScreen && Meui.Theme.darkMode
             z: 999
         }
 
@@ -237,6 +239,7 @@ Window {
                         size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "minimize.svg"
                         onClicked: root.showMinimized()
+                        visible: root.visibility !== Window.FullScreen
                     }
 
                     WindowButton {
@@ -245,12 +248,14 @@ Window {
                             (Meui.Theme.darkMode ? "dark/" : "light/") +
                             (root.visibility === Window.Maximized ? "restore.svg" : "maximize.svg")
                         onClicked: root.toggleMaximized()
+                        visible: root.visibility !== Window.FullScreen
                     }
 
                     WindowButton {
                         size: 35
                         source: "qrc:/meui/kit/images/" + (Meui.Theme.darkMode ? "dark/" : "light/") + "close.svg"
                         onClicked: root.close()
+                        visible: root.visibility !== Window.FullScreen
                     }
                 }
             }
