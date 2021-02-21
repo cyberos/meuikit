@@ -60,7 +60,7 @@ private:
     QColor m_greenColor  = QColor(53,  191, 86 );   // #35BF56
     QColor m_purpleColor = QColor(130, 102, 255);   // #8266FF
     QColor m_pinkColor   = QColor(202, 100, 172);   // #CA64AC
-    QColor m_orangeColor = QColor(230, 113, 43 );    // #E6712B
+    QColor m_orangeColor = QColor(218, 124, 67 );   // #DA7C43
 };
 
 #endif // THEMEMANAGER_H
