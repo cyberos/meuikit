@@ -23,6 +23,12 @@ Item {
         anchors.margins: size * 0.1
         radius: control.height / 2
         color: mouseArea.pressed ? pressedColor : mouseArea.containsMouse ? control.hoveredColor : "transparent"
+        Behavior on color {
+            ColorAnimation {
+                duration: 125
+                easing.type: Easing.InOutCubic
+            }
+        }
     }
 
     MouseArea {

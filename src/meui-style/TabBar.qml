@@ -12,6 +12,7 @@ T.TabBar {
     spacing: 0
 
     contentItem: ListView {
+        id: listView
         implicitWidth: contentWidth
         implicitHeight: control.contentModel.get(0).height
 
@@ -24,7 +25,7 @@ T.TabBar {
         flickableDirection: Flickable.AutoFlickIfNeeded
         snapMode: ListView.SnapToItem
 
-        highlightMoveDuration: 0
+        highlightMoveDuration: 250
         highlightResizeDuration: 0
         highlightFollowsCurrentItem: true
         highlightRangeMode: ListView.ApplyRange
@@ -48,6 +49,12 @@ T.TabBar {
                     horizontalOffset: 0
                     verticalOffset: 0
                     color: Qt.rgba(0, 0, 0, 0.11)
+                }
+            }
+            x: listView.currentItem.x
+            Behavior on x {
+                NumberAnimation {
+                    easing.type: Easing.InOutCubic
                 }
             }
         }

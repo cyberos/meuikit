@@ -32,9 +32,21 @@ T.Button
         implicitWidth:  (Meui.Units.iconSizes.medium * 3) + Meui.Units.largeSpacing
         implicitHeight: Meui.Units.iconSizes.medium + Meui.Units.smallSpacing
 
-        color: control.pressed ? Meui.Theme.highlightColor : control.Meui.Theme.backgroundColor
+        color: control.pressed ? Meui.Theme.highlightColor
+            : Meui.Theme.backgroundColor
+        ColorAnimation {
+            duration: 90
+            easing.type: Easing.InOutCubic
+            id: _anim
+        }
+        Behavior on color {
+            animation: _anim
+        }
         border.color: control.activeFocus || control.pressed ? Meui.Theme.highlightColor :
                       Qt.tint(Meui.Theme.textColor, Qt.rgba(Meui.Theme.backgroundColor.r, Meui.Theme.backgroundColor.g, Meui.Theme.backgroundColor.b, 0.7))
+        Behavior on border.color {
+            animation: _anim
+        }
         border.width: Meui.Units.devicePixelRatio
         radius: Meui.Theme.smallRadius
     }
