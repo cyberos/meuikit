@@ -10,10 +10,8 @@ Item {
     height: size
     width: size
 
-    property color hoveredColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.5)
-                                                   : Qt.darker(Meui.Theme.backgroundColor, 1.2)
-    property color pressedColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.3)
-                                                     : Qt.darker(Meui.Theme.backgroundColor, 1.3)
+    property color backgroundColor: Meui.Theme.darkMode ? Qt.lighter(Meui.Theme.backgroundColor, 1.5)
+                                                   : Qt.darker(Meui.Theme.backgroundColor, 1.3)
     property alias source: image.source
     signal clicked()
 
@@ -22,9 +20,10 @@ Item {
         anchors.fill: parent
         anchors.margins: size * 0.1
         radius: control.height / 2
-        color: mouseArea.pressed ? pressedColor : mouseArea.containsMouse ? control.hoveredColor : "transparent"
-        Behavior on color {
-            ColorAnimation {
+        color: Meui.Theme.textColor
+        opacity: mouseArea.pressed ? 0.3 : mouseArea.containsMouse ? 0.1 : 0
+        Behavior on opacity {
+            NumberAnimation {
                 duration: 125
                 easing.type: Easing.InOutCubic
             }
